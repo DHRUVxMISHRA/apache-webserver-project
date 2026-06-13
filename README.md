@@ -54,23 +54,47 @@ User → Domain → AWS EC2 → Apache HTTPD → Static Website
 * Enabled Port 443
 * Secured website using SSL/TLS
 
+### Phase 6: Custom Error Pages
+
+* Created custom 404 error page
+* Configured Apache ErrorDocument directive
+* Improved user experience for invalid URLs
+* Reloaded Apache configuration
+
+
 ## Project Structure
 
+```text
 apache-webserver-project/
-
-├── config/
+├── README.md
+├── configs/
 │   └── httpd.conf
-│
+├── domain/
+│   └── domain-setup.md
+├── error-pages/
+│   ├── error-pages.md
+│   └── error_404.html
 ├── scripts/
 │   └── install-httpd.sh
-│
 ├── ssl/
+│   ├── changes.md
 │   └── ssl-setup.md
-│
-├── website/
-│   └── index.html
-│
-└── README.md
+└── website/
+    ├── index.html
+    └── styles.css
+```
+
+## Important Files
+
+| File | Purpose |
+|--------|---------|
+| httpd.conf | Apache main configuration |
+| index.html | Main website page |
+| styles.css | Website styling |
+| error_404.html | Custom 404 error page |
+| ssl-setup.md | SSL configuration notes |
+| domain-setup.md | Domain configuration notes |
+| install-httpd.sh | Apache installation script |
 
 ## Current Status
 
@@ -84,14 +108,30 @@ apache-webserver-project/
 
 ✅ HTTPS Enabled
 
+✅ Custom Error Pages
+
 🔄 Next Phase:
 
-* Custom Error Pages
 * Virtual Hosts
 * Multiple Website Hosting
 * Reverse Proxy
 * Load Balancing
 
+
 ## Domain
 
 https://dhruvmishra.co.in
+
+## Learning Outcomes
+
+Through this project I learned:
+
+* Apache HTTPD Installation and Configuration
+* Linux File and Service Management
+* AWS EC2 Administration
+* DNS Configuration
+* Domain Mapping
+* SSL/TLS Concepts
+* Let's Encrypt and Certbot
+* Custom Error Page Handling
+* Web Server Troubleshooting
