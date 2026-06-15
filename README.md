@@ -1,7 +1,6 @@
 # Apache Web Server Project
 
 ## Overview
-
 This project demonstrates the complete setup and configuration of Apache HTTPD on AWS EC2 (Amazon Linux 2023), including custom website hosting, domain configuration, and HTTPS security using Let's Encrypt SSL certificates.
 
 ## Tech Stack
@@ -16,7 +15,7 @@ This project demonstrates the complete setup and configuration of Apache HTTPD o
 
 ## Project Architecture
 
-User → Domain → AWS EC2 → Apache HTTPD → Static Website
+User → Domain → AWS EC2 → Apache HTTPD → Virtual Hosts → Multiple Websites
 
 ## Features Implemented
 
@@ -68,7 +67,14 @@ User → Domain → AWS EC2 → Apache HTTPD → Static Website
 * Enabled configuration loading from conf.d
 * Moved website-specific settings from httpd.conf
 * Prepared server for hosting multiple websites
-## Project Structure
+
+### Phase 8: Multiple Website Hosting
+
+* Hosted multiple websites on a single Apache server
+* Created separate Virtual Host configuration
+* Configured ServerName and ServerAlias
+* Configured dedicated log files
+* Implemented multi-site architecture
 
 ## Project Structure
 
@@ -90,22 +96,51 @@ apache-webserver-project/
 ├── virtual-hosts/
 │   ├── dhruvmishra.co.in.conf
 │   └── virtual-hosts.md
+├── multi-site-hosting/
+│   ├── mywebsite2.conf
+│   └── multi-site-hosting.md
 └── website/
-    ├── index.html
     └── styles.css
 ```
 
 ## Important Files
 
-| File | Purpose |
-|--------|---------|
-| httpd.conf | Apache main configuration |
-| index.html | Main website page |
-| styles.css | Website styling |
-| error_404.html | Custom 404 error page |
-| ssl-setup.md | SSL configuration notes |
-| domain-setup.md | Domain configuration notes |
-| install-httpd.sh | Apache installation script |
+### Apache Configuration
+
+- `configs/httpd.conf` → Main Apache configuration
+
+### Website Files
+
+- `website/index.html` → Homepage
+- `website/styles.css` → Website styling
+
+### Error Handling
+
+- `error-pages/error_404.html` → Custom 404 page
+- `error-pages/error-pages.md` → Error page documentation
+
+### Domain Configuration
+
+- `domain/domain-setup.md` → Domain and DNS setup notes
+
+### SSL Configuration
+
+- `ssl/ssl-setup.md` → SSL/TLS setup
+- `ssl/changes.md` → SSL configuration changes
+
+### Virtual Hosts
+
+- `virtual-hosts/dhruvmishra.co.in.conf` → Primary website Virtual Host
+- `virtual-hosts/virtual-hosts.md` → Virtual Host notes
+
+### Multi-Site Hosting
+
+- `multi-site-hosting/mywebsite2.conf` → Second website configuration
+- `multi-site-hosting/multi-site-hosting.md` → Multi-site hosting notes
+
+### Automation
+
+- `scripts/install-httpd.sh` → Apache installation script| install-httpd.sh | Apache installation script |
 
 ## Current Status
 
@@ -123,8 +158,8 @@ apache-webserver-project/
 
 🔄 Next Phase:
 
-* Multiple Website Hosting
 * Reverse Proxy
+* Load Balancing
 * Load Balancing
 
 ## Domain
@@ -147,3 +182,8 @@ Through this project I learned:
 * Apache Virtual Hosts
 * Multi-Site Hosting Architecture
 * Domain-Based Website Routing
+* Apache Multi-Site Hosting
+* ServerName and ServerAlias Configuration
+* Dedicated Website Logging
+* Dedicated Website Logging
+* Name-Based Virtual Hosting
