@@ -15,7 +15,7 @@ This project demonstrates the complete setup and configuration of Apache HTTPD o
 
 ## Project Architecture
 
-User → Domain → AWS EC2 → Apache HTTPD → Virtual Hosts → Multiple Websites
+User → Domain → AWS EC2 → Apache HTTPD → Virtual Hosts → Reverse Proxy → Backend Application
 
 ## Features Implemented
 
@@ -76,6 +76,14 @@ User → Domain → AWS EC2 → Apache HTTPD → Virtual Hosts → Multiple Webs
 * Configured dedicated log files
 * Implemented multi-site architecture
 
+### Phase 9: Reverse Proxy
+
+* Installed Node.js and React
+* Configured Apache as Reverse Proxy
+* Forwarded requests to React application on port 3000
+* Configured ProxyPass and ProxyPassReverse
+* Implemented modern web application architecture
+
 ## Project Structure
 
 ```text
@@ -88,6 +96,9 @@ apache-webserver-project/
 ├── error-pages/
 │   ├── error-pages.md
 │   └── error_404.html
+├── reverse-proxy/
+│   ├── mywebsite2-reverse-proxy.conf
+│   └── reverse-proxy.md
 ├── scripts/
 │   └── install-httpd.sh
 ├── ssl/
@@ -99,8 +110,13 @@ apache-webserver-project/
 ├── multi-site-hosting/
 │   ├── mywebsite2.conf
 │   └── multi-site-hosting.md
-└── website/
-    └── styles.css
+├── website/
+│   ├── index.html
+│   └── styles.css
+│
+└── react-app/
+    ├── react-setup.md
+    └── package-info.md
 ```
 
 ## Important Files
@@ -138,9 +154,19 @@ apache-webserver-project/
 - `multi-site-hosting/mywebsite2.conf` → Second website configuration
 - `multi-site-hosting/multi-site-hosting.md` → Multi-site hosting notes
 
+### Reverse Proxy
+
+- `reverse-proxy/mywebsite2-reverse-proxy.conf` → Apache Reverse Proxy configuration
+- `reverse-proxy/reverse-proxy.md` → Reverse Proxy implementation notes
+
+### React Application
+
+- `react-app/react-setup.md` → React application installation and setup
+- `react-app/package-info.md` → Node.js, npm and React environment information
+
 ### Automation
 
-- `scripts/install-httpd.sh` → Apache installation script| install-httpd.sh | Apache installation script |
+- `scripts/install-httpd.sh` → Apache installation script for Amazon Linux 2023
 
 ## Current Status
 
@@ -156,10 +182,14 @@ apache-webserver-project/
 
 ✅ Custom Error Pages
 
+✅ Virtual Hosts Configured
+
+✅ Multiple Website Hosting
+
+✅ Reverse Proxy Configured
+
 🔄 Next Phase:
 
-* Reverse Proxy
-* Load Balancing
 * Load Balancing
 
 ## Domain
@@ -180,10 +210,13 @@ Through this project I learned:
 * Custom Error Page Handling
 * Web Server Troubleshooting
 * Apache Virtual Hosts
-* Multi-Site Hosting Architecture
 * Domain-Based Website Routing
 * Apache Multi-Site Hosting
 * ServerName and ServerAlias Configuration
 * Dedicated Website Logging
-* Dedicated Website Logging
 * Name-Based Virtual Hosting
+* Apache Reverse Proxy
+* ProxyPass and ProxyPassReverse
+* React Application Hosting
+* Backend Application Routing
+* Reverse Proxy Architecture
