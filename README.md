@@ -61,6 +61,14 @@ User → Domain → AWS EC2 → Apache HTTPD → Static Website
 * Improved user experience for invalid URLs
 * Reloaded Apache configuration
 
+### Phase 7: Apache Virtual Hosts
+
+* Created dedicated website document root
+* Configured Apache Virtual Host
+* Enabled configuration loading from conf.d
+* Moved website-specific settings from httpd.conf
+* Prepared server for hosting multiple websites
+## Project Structure
 
 ## Project Structure
 
@@ -79,6 +87,9 @@ apache-webserver-project/
 ├── ssl/
 │   ├── changes.md
 │   └── ssl-setup.md
+├── virtual-hosts/
+│   ├── dhruvmishra.co.in.conf
+│   └── virtual-hosts.md
 └── website/
     ├── index.html
     └── styles.css
@@ -112,11 +123,9 @@ apache-webserver-project/
 
 🔄 Next Phase:
 
-* Virtual Hosts
 * Multiple Website Hosting
 * Reverse Proxy
 * Load Balancing
-
 
 ## Domain
 
@@ -135,3 +144,6 @@ Through this project I learned:
 * Let's Encrypt and Certbot
 * Custom Error Page Handling
 * Web Server Troubleshooting
+* Apache Virtual Hosts
+* Multi-Site Hosting Architecture
+* Domain-Based Website Routing
