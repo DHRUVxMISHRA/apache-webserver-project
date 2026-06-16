@@ -15,7 +15,7 @@ This project demonstrates the complete setup and configuration of Apache HTTPD o
 
 ## Project Architecture
 
-User → Domain → AWS EC2 → Apache HTTPD → Virtual Hosts → Reverse Proxy → Backend Application
+User → Domain → Apache HTTPD → Virtual Hosts → Reverse Proxy → Load Balancer → Backend Servers
 
 ## Features Implemented
 
@@ -84,39 +84,60 @@ User → Domain → AWS EC2 → Apache HTTPD → Virtual Hosts → Reverse Proxy
 * Configured ProxyPass and ProxyPassReverse
 * Implemented modern web application architecture
 
+### Phase 10: Load Balancing
+
+* Configured Apache HTTPD as a Load Balancer
+* Created backend Apache web servers
+* Configured BalancerMember directives
+* Implemented Round Robin request distribution
+* Verified traffic distribution across multiple servers
+
 ## Project Structure
 
 ```text
 apache-webserver-project/
 ├── README.md
+│
 ├── configs/
 │   └── httpd.conf
+│
 ├── domain/
 │   └── domain-setup.md
+│
 ├── error-pages/
 │   ├── error-pages.md
 │   └── error_404.html
-├── reverse-proxy/
-│   ├── mywebsite2-reverse-proxy.conf
-│   └── reverse-proxy.md
-├── scripts/
-│   └── install-httpd.sh
+│
 ├── ssl/
-│   ├── changes.md
-│   └── ssl-setup.md
+│   ├── ssl-setup.md
+│   └── changes.md
+│
 ├── virtual-hosts/
 │   ├── dhruvmishra.co.in.conf
 │   └── virtual-hosts.md
+│
 ├── multi-site-hosting/
 │   ├── mywebsite2.conf
 │   └── multi-site-hosting.md
-├── website/
-│   ├── index.html
-│   └── styles.css
 │
-└── react-app/
-    ├── react-setup.md
-    └── package-info.md
+├── reverse-proxy/
+│   ├── mywebsite2-reverse-proxy.conf
+│   └── reverse-proxy.md
+│
+├── load-balancing/
+│   ├── load-balancer.conf
+│   └── load-balancing.md
+│
+├── react-app/
+│   ├── react-setup.md
+│   └── package-info.md
+│
+├── scripts/
+│   └── install-httpd.sh
+│
+└── website/
+    ├── index.html
+    └── styles.css 
 ```
 
 ## Important Files
@@ -159,40 +180,21 @@ apache-webserver-project/
 - `reverse-proxy/mywebsite2-reverse-proxy.conf` → Apache Reverse Proxy configuration
 - `reverse-proxy/reverse-proxy.md` → Reverse Proxy implementation notes
 
+### Load Balancing
+
+* `load-balancing/load-balancer.conf` → Apache Load Balancer configuration
+* `load-balancing/load-balancing.md` → Load Balancing implementation notes
+
 ### React Application
 
 - `react-app/react-setup.md` → React application installation and setup
 - `react-app/package-info.md` → Node.js, npm and React environment information
 
-### Automation
+### Scripts
 
 - `scripts/install-httpd.sh` → Apache installation script for Amazon Linux 2023
 
-## Current Status
-
-✅ Apache Installed
-
-✅ Static Website Hosted
-
-✅ Custom Apache Configuration
-
-✅ Domain Connected
-
-✅ HTTPS Enabled
-
-✅ Custom Error Pages
-
-✅ Virtual Hosts Configured
-
-✅ Multiple Website Hosting
-
-✅ Reverse Proxy Configured
-
-🔄 Next Phase:
-
-* Load Balancing
-
-## Domain
+## Live Domain
 
 https://dhruvmishra.co.in
 
@@ -220,3 +222,9 @@ Through this project I learned:
 * React Application Hosting
 * Backend Application Routing
 * Reverse Proxy Architecture
+* Apache Load Balancing
+* Backend Server Clustering
+* BalancerMember Configuration
+* Round Robin Traffic Distribution
+* High Availability Concepts
+* Traffic Distribution Across Multiple Servers
